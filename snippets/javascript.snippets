@@ -1,0 +1,45 @@
+snippet setup
+	export default{
+		name: '${1}',
+		components:{},
+		setup(){
+		}
+	}
+
+snippet vue
+	export default{
+		name: '${1}',
+		data(){
+			return {
+				${2}
+			}
+		},
+		methods:{},
+		components:{}
+	}
+
+snippet myRequest
+	const [err, res] = await myRequest({
+		url: '${1}'
+	})
+
+snippet use
+	import {ref} from "vue";
+
+	export default function(){
+		const state = ref({${1}})
+
+		return {
+			state
+		}
+	}
+
+snippet result
+	const result = await ${1}
+	if(result.err_code) return;
+
+snippet el-icon
+	import {${1}} from "@element-plus/icons-vue";
+
+snippet el
+	import {${1}} from "element-plus";

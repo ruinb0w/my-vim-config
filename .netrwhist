@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/Users/ruinb0w/.hyper_plugins'
+let g:netrw_dirhist_9='/Users/ruinb0w/Lab/multiDataV/multidatav/src'
+let g:netrw_dirhist_8='/Users/ruinb0w/Lab/multiDataV/vue'
+let g:netrw_dirhist_7='/Users/ruinb0w/Workspace/sjzhxt/sjzhxt/delegate_info/InfoList'
+let g:netrw_dirhist_6='/Users/ruinb0w/Workspace/guard/guard/components/FilterBox'
+let g:netrw_dirhist_5='/Users/ruinb0w/Workspace/guard/guard/components'
+let g:netrw_dirhist_4='/Users/ruinb0w/Workspace/guard/guard/components/Minput'
+let g:netrw_dirhist_3='/Users/ruinb0w/Workspace/dhh-uni/dhh-uni/wuyefee/history/components/Search'
+let g:netrw_dirhist_2='/Users/ruinb0w/Lab/wasm/course05'
+let g:netrw_dirhist_1='/Users/ruinb0w/Lab/bd/army-manager/node_modules/electron'
