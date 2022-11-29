@@ -10,5 +10,6 @@
     "css",
     "vue"
   ],
-  "prettier.disableLanguages": []
+  "prettier.disableLanguages": [],
+  "prettier.printWidth": 100
 }

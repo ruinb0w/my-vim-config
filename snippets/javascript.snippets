@@ -6,35 +6,21 @@ snippet setup
 		}
 	}
 
-snippet vue
-	export default{
-		name: '${1}',
-		data(){
-			return {
-				${2}
-			}
-		},
-		methods:{},
-		components:{}
-	}
+snippet hook
+	import {reactive} from "vue";
 
-snippet myRequest
-	const [err, res] = await myRequest({
-		url: '${1}'
-	})
-
-snippet use
-	import {ref} from "vue";
-
-	export default function(){
-		const state = ref({${1}})
+	export function ${1:useMain}(){
+		const state = reactive({${2}})
 
 		return {
 			state
 		}
 	}
 
-snippet result
+snippet use
+	import {${2:useMain}} from "${1:./hook}"
+
+snippet result-error
 	const result = await ${1}
 	if(result.err_code) return;
 

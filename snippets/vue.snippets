@@ -1,26 +1,47 @@
-snippet view
-	<view class="${1}">${2}</view>
-
-snippet script
-	<script src="${1}"></script>
-
-snippet style
-	<style lang="scss" src="${1}"></style>
-
-snippet image
-	<image class="${1}" src="${2}" />
-
-snippet template
-	<template>${1}</template>
-
-	<script src="${2}"></script>
-	<style lang="scss" src="${3}" scoped></style>
-
 snippet v-for
-	v-for="${1}" :key="${2}"
+	v-for="(${2:item}, i) in ${1}" :key="i"
 
 snippet div
 	<div class="${1}">${2}</div>
 
+snippet span
+	<span class="${1}">${2}</span>
+
 snippet img
 	<img class="${1}" src="${2}"/>
+
+snippet template
+	<template ${1:#name}></template>
+
+# for mini-program
+
+snippet image
+	<image class="${1}" src="${2}" />
+
+snippet view
+	<view class="${1}">${2}</view>
+
+
+# for element-plus
+
+snippet el-pagination
+	<el-pagination
+		layout="prev, pager, next"
+		hide-on-single-page
+		:total="${1}"
+		:page-size="${2}"
+		v-model:current-page="${3}"
+	/>
+
+snippet el-table
+	<el-table :data="state.tableData" style="width: 100%" border>
+		<el-table-column prop="name" label="姓名" />
+		<el-table-column fixed="right" label="操作" width="200" align="center">
+			<template #default>
+				<el-button type="primary" size="small">编辑</el-button>
+			</template>
+		</el-table-column>
+	</el-table>
+
+snippet el-button
+	<el-button size="${3}" type="${2:primary}">${1}</el-button>

@@ -1,13 +1,21 @@
-nmap <silent> gd <Plug>(coc-definition)
-nnoremap <Space> :CocCommand<CR>
+" ------------ basic config -----------
+" utf-8 byte sequence.
+set encoding=utf-8
+" Some servers have issues with backup files, see #649.
+set nobackup
+set nowritebackup
 
-set hidden
-set updatetime=100
-if has("patch-8.1.1564")
-  set signcolumn=number
-else
-  set signcolumn=yes
-endif
+
+" set hidden
+set updatetime=300
+set signcolumn=yes
+" if has("patch-8.1.1564")
+  " set signcolumn=number
+" else
+  " set signcolumn=yes
+" endif
+
+" ------------ plugins -------------
 
 " coc plugins
 let g:coc_global_extensions = [
@@ -21,18 +29,26 @@ let g:coc_global_extensions = [
       \'coc-prettier',
       \'coc-json']
 
-" 让tab执行补全操作
-inoremap <silent><expr> <Tab>
-  \ pumvisible() ? "\<C-n>" :
-  \ <SID>check_back_space() ? "\<TAB>" :
-  \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+" ------------ shortcuts ------------
+" list coc command
+nnoremap <Space> :CocCommand<CR>
+
+" use tab to show tip
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
 " 用回车确认补全后保持光标位置
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm(): "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm(): "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-" 报错跳转
-" nmap <silent> <Leader>[ <Plug>(coc-diagnostic-prev)
+" jump to error position
 nmap <silent> <Leader><Leader> <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
@@ -48,17 +64,8 @@ map <silent> gr <Plug>(coc-references)
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" coc snippets
-" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+" jump to next placeholder
 let g:coc_snippet_next = '<Leader>n'
-
-" Use <C-j> for both expand and jump (make expand higher priority.)
-imap <C-j> <Plug>(coc-snippets-expand-jump)
 
 " coc explorer
 nmap <Leader>e :CocCommand explorer<CR>

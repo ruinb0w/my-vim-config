@@ -29,3 +29,6 @@ set foldlevelstart=99
 " save cursor position
 au BufLeave * let b:winview = winsaveview()
 au BufEnter * if(exists('b:winview')) | call winrestview(b:winview) | endif
+
+" close buffer
+nmap <Leader>d :bd<CR>

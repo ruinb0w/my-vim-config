@@ -1,19 +1,15 @@
-" vundle
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'vim-airline/vim-airline' " show panel and tabline
-Plugin 'chemzqm/wxapp.vim' " use for wechat mini program
-Plugin 'neoclide/coc.nvim'
-Plugin 'preservim/nerdcommenter' " commenter tool
-Plugin 'CodeFalling/fcitx-vim-osx'
-Plugin 'leafOfTree/vim-vue-plugin'
-Plugin 'ap/vim-css-color' " css color preview
-Plugin 'preservim/tagbar'
-Plugin 'vim-airline/vim-airline-themes'
-call vundle#end()
-filetype plugin indent on
+" vim plug
+call plug#begin()
+Plug 'vim-airline/vim-airline' " show panel and tabline
+Plug 'vim-airline/vim-airline-themes'
+"Plug 'chemzqm/wxapp.vim' " use for wechat mini program
+Plug 'neoclide/coc.nvim'
+Plug 'preservim/nerdcommenter' " commenter tool
+Plug 'CodeFalling/fcitx-vim-osx'
+"Plug 'leafOfTree/vim-vue-plugin'
+Plug 'ap/vim-css-color' " css color preview
+Plug 'preservim/tagbar'
+call plug#end()
 
 
 " nerdcommenter
