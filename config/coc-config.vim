@@ -45,8 +45,8 @@ function! CheckBackspace() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" 用回车确认补全后保持光标位置
-" inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm(): "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" keep cursor pointion after complete code
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm(): "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " jump to error position
 nmap <silent> <Leader><Leader> <Plug>(coc-diagnostic-next)
