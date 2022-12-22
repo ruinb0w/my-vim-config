@@ -4,11 +4,12 @@ Plug 'vim-airline/vim-airline' " show panel and tabline
 Plug 'vim-airline/vim-airline-themes'
 "Plug 'chemzqm/wxapp.vim' " use for wechat mini program
 Plug 'neoclide/coc.nvim'
-Plug 'preservim/nerdcommenter' " commenter tool
+" Plug 'preservim/nerdcommenter' " commenter tool
+Plug 'tomtom/tcomment_vim' " commenting
 Plug 'CodeFalling/fcitx-vim-osx'
 "Plug 'leafOfTree/vim-vue-plugin'
 Plug 'ap/vim-css-color' " css color preview
-Plug 'preservim/tagbar'
+" Plug 'preservim/tagbar'
 call plug#end()
 
 
@@ -36,7 +37,8 @@ nmap <leader>k <Plug>AirlineSelectPrevTab
 nmap <leader>j <Plug>AirlineSelectNextTab
 
 "tagbar
-nmap <leader>t :TagbarToggle<CR>
-let g:tagbar_autofocus = 1
-let g:tagbar_foldlevel = 2
+" nmap <leader>t :TagbarToggle<CR>
+" let g:tagbar_autofocus = 1
+" let g:tagbar_foldlevel = 2
+let g:tcomment_opleader1 = ','
 
