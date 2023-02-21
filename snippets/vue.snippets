@@ -1,6 +1,11 @@
-snippet v-for
-	v-for="(${2:item}, i) in ${1}" :key="i"
+snippet setup
+	<script setup></script>
+	<template>
+		<div class="${1}"></div>
+	</template>
+	<style lang="scss" scoped></style>
 
+# for element
 snippet div
 	<div class="${1}">${2}</div>
 
@@ -13,16 +18,14 @@ snippet img
 snippet template
 	<template ${1:#name}></template>
 
-# for mini-program
 
-snippet image
-	<image class="${1}" src="${2}" />
-
-snippet view
-	<view class="${1}">${2}</view>
-
+# for vue command
+snippet v-for
+	v-for="(${2:item}, i) in ${1}" :key="i"
 
 # for element-plus
+snippet el-icon
+	import {${1}} from "@element-plus/icons-vue";
 
 snippet el-pagination
 	<el-pagination

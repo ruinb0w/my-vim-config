@@ -1,7 +1,6 @@
 " ------------ basic config -----------
 " utf-8 byte sequence.
 set encoding=utf-8
-" Some servers have issues with backup files, see #649.
 set nobackup
 set nowritebackup
 
@@ -25,10 +24,10 @@ let g:coc_global_extensions = [
       \'coc-snippets',
       \'coc-css',
       \'coc-html',
-      \'coc-rust-analyzer',
       \'coc-prettier',
       \'coc-json',
-      \'@yaegassy/coc-volar']
+      \'@yaegassy/coc-volar',
+      \'coc-rust-analyzer']
 
 
 " ------------ shortcuts ------------

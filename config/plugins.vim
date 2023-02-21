@@ -6,7 +6,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'neoclide/coc.nvim'
 " Plug 'preservim/nerdcommenter' " commenter tool
 Plug 'tomtom/tcomment_vim' " commenting
-Plug 'CodeFalling/fcitx-vim-osx'
+"Plug 'CodeFalling/fcitx-vim-osx'
 "Plug 'leafOfTree/vim-vue-plugin'
 Plug 'ap/vim-css-color' " css color preview
 " Plug 'preservim/tagbar'

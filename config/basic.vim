@@ -32,3 +32,6 @@ au BufEnter * if(exists('b:winview')) | call winrestview(b:winview) | endif
 
 " close buffer
 nmap <Leader>d :bd<CR>
+
+" close visual mode by mouse select
+set mouse=
