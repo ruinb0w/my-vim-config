@@ -1,14 +1,20 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": [
-    "scss",
-    "javascript",
-    "typescript",
-    "html",
-    "json",
-    "markdown",
-    "css",
-    "vue"
-  ],
+  "coc": {
+    "preferences": {
+      "formatOnSaveFiletypes": [
+        "rust",
+        "scss",
+        "javascript",
+        "typescript",
+        "html",
+        "json",
+        "markdown",
+        "css",
+        "vue",
+        "lua"
+      ]
+    }
+  },
   "prettier.disableLanguages": [],
   "prettier.printWidth": 100
 }

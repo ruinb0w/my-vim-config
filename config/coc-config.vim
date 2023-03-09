@@ -27,7 +27,8 @@ let g:coc_global_extensions = [
       \'coc-prettier',
       \'coc-json',
       \'@yaegassy/coc-volar',
-      \'coc-rust-analyzer']
+      \'coc-rust-analyzer',
+      \'coc-lua']
 
 
 " ------------ shortcuts ------------
