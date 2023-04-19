@@ -58,6 +58,17 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 map <silent> gr <Plug>(coc-references)
 
+" show dowcument
+nnoremap <silent> K :call ShowDocumentation()<CR>
+
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
+
 " 相同字符串高亮
 " autocmd CursorHold * silent call CocActionAsync('highlight')
 

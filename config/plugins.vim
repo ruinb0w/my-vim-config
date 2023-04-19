@@ -10,7 +10,7 @@ Plug 'tomtom/tcomment_vim' " commenting
 "Plug 'leafOfTree/vim-vue-plugin'
 Plug 'ap/vim-css-color' " css color preview
 " Plug 'preservim/tagbar'
-Plug 'codota/tabnine-nvim', { 'do': './dl_binaries.sh' }
+" Plug 'codota/tabnine-nvim', { 'do': './dl_binaries.sh' }
 call plug#end()
 
 
@@ -44,13 +44,13 @@ nmap <leader>j <Plug>AirlineSelectNextTab
 let g:tcomment_opleader1 = ','
 
 " tabnine
-lua <<EOF
-require('tabnine').setup({
-  disable_auto_comment=true, 
-  accept_keymap="<C-[>",
-  dismiss_keymap = "<C-]>",
-  debounce_ms = 800,
-  suggestion_color = {gui = "#808080", cterm = 244},
-  exclude_filetypes = {"TelescopePrompt"}
-})
-EOF
+" lua <<EOF
+" require('tabnine').setup({
+"   disable_auto_comment=true, 
+"   accept_keymap="<C-a>",
+"   dismiss_keymap = "<C-]>",
+"   debounce_ms = 500,
+"   suggestion_color = {gui = "#808080", cterm = 244},
+"   exclude_filetypes = {"TelescopePrompt"}
+" })
+" EOF
