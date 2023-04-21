@@ -16,5 +16,9 @@
     }
   },
   "prettier.disableLanguages": [],
-  "prettier.printWidth": 100
+  "prettier.printWidth": 100,
+  "Lua.diagnostics": {
+    "globals": ["vim"],
+    "disable": ["lowercase-global"]
+  }
 }
