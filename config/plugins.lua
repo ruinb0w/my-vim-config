@@ -51,4 +51,20 @@ return require('packer').startup(function(use)
       }
     end
   }
+
+  use 'mfussenegger/nvim-dap'
+
+  use { "mxsdev/nvim-dap-vscode-js", requires = { "mfussenegger/nvim-dap" } }
+
+  use {
+    "microsoft/vscode-js-debug",
+    opt = true,
+    run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out"
+  }
+
+  use { 'ibhagwan/fzf-lua',
+    requires = { 'nvim-tree/nvim-web-devicons' }
+  }
+
+  use { 'junegunn/fzf', run = './install --bin' }
 end)

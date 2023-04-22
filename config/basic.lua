@@ -37,3 +37,12 @@ vim.api.nvim_set_keymap('n', '<leader>x', ':bd<CR> ', map_opts)
 
 --  close visual mode by mouse select
 vim.o.mouse = ""
+
+-- window manage
+vim.keymap.set('n', "<leader>ws", "<c-w>s")
+vim.keymap.set('n', "<leader>ww", "<c-w>w")
+vim.keymap.set('n', "<leader>wv", "<c-w>v")
+
+-- save and quit
+vim.keymap.set('n', "<leader>s", ":w<CR>")
+vim.keymap.set('n', "<leader>q", ":q<CR>")
