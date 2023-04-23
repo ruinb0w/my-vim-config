@@ -37,6 +37,19 @@ return require('packer').startup(function(use)
     end
   }
 
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    dependencies = {
+      'JoosepAlviste/nvim-ts-context-commentstring',
+    },
+    config = function()
+      require('nvim-treesitter.configs').setup {
+        ensure_installed = { 'css', 'html', 'javascript', 'scss', 'tsx', 'typescript', 'vue' },
+        context_commentstring = { enable = true },
+      }
+    end
+  }
+
   use 'folke/tokyonight.nvim'
 
   use {

@@ -7,14 +7,14 @@ require('coc-conf')
 require('dap-config')
 
 --[[ coc-explorer ]]
-vim.keymap.set('n', '<leader>e', ':CocCommand explorer<CR>')
+vim.keymap.set('n', '<leader>e', ':CocCommand explorer<CR>', { silent = true })
 
 
 --[[ bufferline ]]
 vim.opt.termguicolors = true
 require("bufferline").setup {}
 for i = 1, 9, 1 do
-  vim.keymap.set("n", "<leader>" .. i, ":BufferLineGoToBuffer " .. i .. "<cr>")
+  vim.keymap.set("n", "<leader>" .. i, ":BufferLineGoToBuffer " .. i .. "<cr>", { silent = true })
 end
 
 --[[ tokyonight ]]
