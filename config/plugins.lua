@@ -19,7 +19,7 @@ return require('packer').startup(function(use)
 
   use { "akinsho/toggleterm.nvim", tag = '*', config = function()
     require("toggleterm").setup({
-      open_mapping = '<leader>t',
+      open_mapping = [[<leader>t]],
       direction = 'float',
       float_opts = { border = 'curved' }
     })
@@ -44,11 +44,7 @@ return require('packer').startup(function(use)
     config = function()
       vim.o.timeout = true
       vim.o.timeoutlen = 300
-      require("which-key").setup {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      }
+      require("which-key").setup {}
     end
   }
 
