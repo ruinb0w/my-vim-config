@@ -1,6 +1,6 @@
 package.path = package.path .. ';/Users/ruinb0w/.config/nvim/config/?.lua'
 
-require("basic")
+require('basic')
 require("plugins")
 require('lualine-conf')
 require('coc-conf')
@@ -14,12 +14,12 @@ vim.keymap.set('n', '<leader>e', ':CocCommand explorer<CR>')
 vim.opt.termguicolors = true
 require("bufferline").setup {}
 for i = 1, 9, 1 do
-	vim.keymap.set("n", "<leader>" .. i, ":BufferLineGoToBuffer " .. i .. "<cr>")
+  vim.keymap.set("n", "<leader>" .. i, ":BufferLineGoToBuffer " .. i .. "<cr>")
 end
 
 --[[ tokyonight ]]
 require("tokyonight").setup({
-	transparent = true
+  transparent = true
 })
 vim.cmd [[colorscheme tokyonight]]
 

@@ -25,13 +25,6 @@ vim.api.nvim_set_keymap('n', '<Esc><Esc>', ':let @/ = ""<CR>', map_opts)
 vim.o.fdm = "indent"
 vim.o.foldlevelstart = 99
 
---  save cursor position
-vim.api.nvim_create_autocmd("BufLeave", { pattern = "*", command = "let b:winview = winsaveview()" })
-vim.api.nvim_create_autocmd("BufEnter", {
-  pattern = "*",
-  command = "if(exists('b:winview')) | call winrestview(b:winview) | endif"
-})
-
 --  close buffer
 vim.api.nvim_set_keymap('n', '<leader>x', ':bd<CR> ', map_opts)
 
