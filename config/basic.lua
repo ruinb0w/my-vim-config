@@ -39,3 +39,6 @@ vim.keymap.set('n', "<leader>wv", "<c-w>v")
 -- save and quit
 vim.keymap.set('n', "<leader>s", ":w<CR>")
 vim.keymap.set('n', "<leader>q", ":q<CR>")
+
+-- map ESC to exit terminal mode
+vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]])

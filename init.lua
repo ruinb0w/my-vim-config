@@ -17,7 +17,7 @@ for i = 1, 9, 1 do
   vim.keymap.set("n", "<leader>" .. i, ":BufferLineGoToBuffer " .. i .. "<cr>", { silent = true })
 end
 
---[[ tokyonight ]]
+-- [[ tokyonight ]]
 require("tokyonight").setup({
   transparent = true
 })
@@ -26,3 +26,12 @@ vim.cmd [[colorscheme tokyonight]]
 
 -- [[fzf]]
 vim.keymap.set("n", "<leader>f", "<cmd>lua require('fzf-lua').files()<CR>", { silent = true })
+
+--[[ codeium ]]
+vim.g.codeium_disable_bindings = 1
+
+-- [[ignore perl]]
+vim.g.loaded_perl_provider = 0
+
+-- [[tcomment_vim]]
+vim.g.tcomment_opleader1 = '<leader>c'

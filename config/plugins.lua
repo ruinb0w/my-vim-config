@@ -3,6 +3,17 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
+  use {
+    'Exafunction/codeium.vim',
+    config = function()
+      -- Change '<C-g>' here to any keycode you like.
+      vim.keymap.set('i', '<c-g>', function() return vim.fn['codeium#Accept']() end, { expr = true })
+      vim.keymap.set('i', '<c-n>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true })
+      vim.keymap.set('i', '<c-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true })
+      vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true })
+    end
+  }
+
   use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons', config = function()
     require("bufferline").setup({
       options = { numbers = "ordinal" }
@@ -27,28 +38,30 @@ return require('packer').startup(function(use)
 
   use { 'neoclide/coc.nvim', branch = 'release' }
 
-  use {
-    'numToStr/Comment.nvim',
-    config = function()
-      require('Comment').setup({
-        toggler = { line = '<leader>c', block = '<leader>b' },
-        opleader = { line = '<leader>c', block = '<leader>b' }
-      })
-    end
-  }
 
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    dependencies = {
-      'JoosepAlviste/nvim-ts-context-commentstring',
-    },
-    config = function()
-      require('nvim-treesitter.configs').setup {
-        ensure_installed = { 'css', 'html', 'javascript', 'scss', 'tsx', 'typescript', 'vue' },
-        context_commentstring = { enable = true },
-      }
-    end
-  }
+  -- use {
+  --   'nvim-treesitter/nvim-treesitter',
+  --   dependencies = {
+  --     'JoosepAlviste/nvim-ts-context-commentstring',
+  --   },
+  --   config = function()
+  --     require('nvim-treesitter.configs').setup {
+  --       ensure_installed = { 'css', 'html', 'javascript', 'scss', 'tsx', 'typescript', 'vue' },
+  --       -- context_commentstring = { enable = true },
+  --     }
+  --   end
+  -- }
+  -- use {
+  --   'numToStr/Comment.nvim',
+  --   config = function()
+  --     require('Comment').setup({
+  --       toggler = { line = '<leader>c', block = '<leader>b' },
+  --       opleader = { line = '<leader>c', block = '<leader>b' }
+  --     })
+  --   end
+  -- }
+
+  use 'tomtom/tcomment_vim'
 
   use 'folke/tokyonight.nvim'
 

@@ -1,7 +1,9 @@
 --[[ coc ]]
 vim.api.nvim_set_var('coc_global_extensions',
   { 'coc-snippets', 'coc-prettier', 'coc-pairs', 'coc-marketplace', 'coc-lua', 'coc-html',
-    'coc-explorer', 'coc-tsserver', 'coc-rust-analyzer', 'coc-json', 'coc-css', '@yaegassy/coc-volar-tools' })
+    'coc-explorer', 'coc-tsserver', 'coc-rust-analyzer', 'coc-json', 'coc-css', '@yaegassy/coc-volar-tools',
+    '@nomicfoundation/coc-solidity'
+  })
 -- use tab to complete
 local opts = { silent = true, noremap = true, expr = true, replace_keycodes = false }
 vim.keymap.set("i", "<TAB>", 'coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()',
@@ -34,7 +36,7 @@ function _G.check_back_space()
 end
 
 -- goto code
-vim.keymap.set("n", "gd", "<Plug>(coc-definition)", { silent = true })
+vim.keymap.set("n", "gd", "<Plug>(coc-definition)")
 vim.keymap.set("n", "gy", "<Plug>(coc-type-definition)", { silent = true })
 vim.keymap.set("n", "gi", "<Plug>(coc-implementation)", { silent = true })
 vim.keymap.set("n", "gr", "<Plug>(coc-references)", { silent = true })
