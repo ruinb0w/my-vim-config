@@ -25,12 +25,6 @@ local bubbles_theme = {
     a = { fg = colors.black, bg = colors.purple },
     b = { fg = colors.purple, bg = colors.grey }
   },
-  -- replace = { a = { fg = colors.black, bg = colors.red } },
-  -- inactive = {
-  --   a = { fg = colors.black, bg = colors.yellow },
-  --   b = { fg = colors.yellow, bg = colors.black },
-  --   c = { fg = colors.black, bg = colors.black },
-  -- },
 }
 
 require('lualine').setup {
@@ -61,3 +55,13 @@ require('lualine').setup {
   },
   extensions = {},
 }
+
+return function(use)
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = {
+      'nvim-tree/nvim-web-devicons',
+      opt = true,
+    }
+  }
+end

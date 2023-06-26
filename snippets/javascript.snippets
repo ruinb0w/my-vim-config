@@ -1,25 +1,3 @@
-snippet setup
-	export default{
-		name: '${1}',
-		components:{},
-		setup(){
-		}
-	}
-
-snippet hook
-	import {reactive} from "vue";
-
-	export function ${1:useMain}(){
-		const state = reactive({${2}})
-
-		return {
-			state
-		}
-	}
-
-snippet use
-	import {${2:useMain}} from "${1:./hook}"
-
 snippet result-error
 	const result = await ${1}
 	if(result.err_code) return;
@@ -29,3 +7,4 @@ snippet el-icon
 
 snippet el
 	import {${1}} from "element-plus";
+

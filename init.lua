@@ -1,37 +1,69 @@
-package.path = package.path .. ';/Users/ruinb0w/.config/nvim/config/?.lua'
+package.path = package.path ..
+    ';/Users/ruinb0w/.config/nvim/nvim-plug-conf/?.lua;/Users/ruinb0w/.config/nvim/coc-plug-conf/?.lua'
+-- require('basic')
 
-require('basic')
-require("plugins")
-require('lualine-conf')
-require('coc-conf')
-require('dap-config')
+vim.g.mapleader = ";"
 
---[[ coc-explorer ]]
-vim.keymap.set('n', '<leader>e', ':CocCommand explorer<CR>', { silent = true })
+--  copy and paste from system clipboard
+local map_opts = { noremap = true, silent = true }
+vim.api.nvim_set_keymap('v', '<leader>y', '"+y', map_opts)
+vim.api.nvim_set_keymap('n', '<leader>p', '"+p', map_opts)
 
+--  set line number
+vim.o.relativenumber = true
+vim.o.number = true
 
---[[ bufferline ]]
-vim.opt.termguicolors = true
-require("bufferline").setup {}
-for i = 1, 9, 1 do
-  vim.keymap.set("n", "<leader>" .. i, ":BufferLineGoToBuffer " .. i .. "<cr>", { silent = true })
-end
+-- ignorecase
+vim.o.ignorecase = true
 
--- [[ tokyonight ]]
-require("tokyonight").setup({
-  transparent = true
-})
-vim.cmd [[colorscheme tokyonight]]
+--  set tab
+vim.o.expandtab = true
+vim.o.tabstop = 2
+vim.o.shiftwidth = 2
+vim.o.softtabstop = 2
 
+--  clear search buffer
+vim.api.nvim_set_keymap('n', '<Esc><Esc>', ':let @/ = ""<CR>', map_opts)
 
--- [[fzf]]
-vim.keymap.set("n", "<leader>f", "<cmd>lua require('fzf-lua').files()<CR>", { silent = true })
+--  set fold
+vim.o.fdm = "indent"
+vim.o.foldlevelstart = 99
 
---[[ codeium ]]
-vim.g.codeium_disable_bindings = 1
+--  close buffer
+vim.api.nvim_set_keymap('n', '<leader>x', ':bd<CR> ', map_opts)
 
--- [[ignore perl]]
-vim.g.loaded_perl_provider = 0
+--  close visual mode by mouse select
+vim.o.mouse = ""
 
--- [[tcomment_vim]]
-vim.g.tcomment_opleader1 = '<leader>c'
+-- window manage
+vim.keymap.set('n', "<leader>ws", "<c-w>s")
+vim.keymap.set('n', "<leader>ww", "<c-w>w")
+vim.keymap.set('n', "<leader>wv", "<c-w>v")
+
+-- save and quit
+vim.keymap.set('n', "<leader>s", ":w<CR>")
+vim.keymap.set('n', "<leader>q", ":q<CR>")
+
+-- map ESC to exit terminal mode
+vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]])
+
+-- ignore perl
+-- vim.g.loaded_perl_provider = 0
+
+-- packer.nvim
+vim.cmd [[packadd packer.nvim]]
+
+return require('packer').startup(function(use)
+  use 'wbthomason/packer.nvim'
+
+  require('lualine-conf')(use)
+  require('bufferline-conf')(use)
+  require('codeium-conf')(use)
+  require('fzf-conf')(use)
+  require('toggleterm-conf')(use)
+  require('coc-conf')(use)
+  require('tcomment-conf')(use)
+  require('tokyonight-conf')(use)
+  require('which-key-conf')(use)
+  require('dap-config')(use)
+end)
