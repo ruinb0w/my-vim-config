@@ -1,5 +1,7 @@
 --[[ codeium ]]
-vim.g.codeium_disable_bindings = 1
+function init()
+  vim.g.codeium_disable_bindings = 1
+end
 
 return function(use)
   use {
@@ -12,4 +14,5 @@ return function(use)
       vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true })
     end
   }
+  init()
 end

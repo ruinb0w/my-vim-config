@@ -1,6 +1,5 @@
 package.path = package.path ..
     ';/Users/ruinb0w/.config/nvim/nvim-plug-conf/?.lua;/Users/ruinb0w/.config/nvim/coc-plug-conf/?.lua'
--- require('basic')
 
 vim.g.mapleader = ";"
 
@@ -66,4 +65,5 @@ return require('packer').startup(function(use)
   require('tokyonight-conf')(use)
   require('which-key-conf')(use)
   require('dap-config')(use)
+  require('leap-conf')(use)
 end)
