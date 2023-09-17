@@ -52,6 +52,14 @@ vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]])
 -- packer.nvim
 vim.cmd [[packadd packer.nvim]]
 
+-- auto switch to en when leave insert
+vim.cmd([[
+augroup MyAutoCmds
+	autocmd!
+	autocmd InsertLeave * silent !im-select com.apple.keylayout.US
+augroup END
+]])
+
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 

@@ -1,7 +1,7 @@
 -- [[fzf]]
 
 function init()
-  vim.keymap.set("n", "<leader>f", "<cmd>lua require('fzf-lua').git_files()<CR>", { silent = true })
+  vim.keymap.set("n", "<leader>f", "<cmd>lua require('fzf-lua').files()<CR>", { silent = true })
 end
 
 return function(use)
