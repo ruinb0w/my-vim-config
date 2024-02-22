@@ -34,6 +34,10 @@ vim.api.nvim_set_keymap('n', '<leader>x', ':bd<CR> ', map_opts)
 --  close visual mode by mouse select
 vim.o.mouse = ""
 
+-- scorll page
+vim.keymap.set('n', '<leader>j', '<C-f>')
+vim.keymap.set('n', '<leader>k', '<C-b>')
+
 -- window manage
 vim.keymap.set('n', "<leader>ws", "<c-w>s")
 vim.keymap.set('n', "<leader>ww", "<c-w>w")

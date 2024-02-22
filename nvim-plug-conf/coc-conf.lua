@@ -2,7 +2,7 @@ function init()
   vim.api.nvim_set_var('coc_global_extensions',
     { 'coc-snippets', 'coc-prettier', 'coc-pairs', 'coc-marketplace', 'coc-lua', 'coc-html',
       'coc-explorer', 'coc-rust-analyzer', 'coc-json', 'coc-css', '@yaegassy/coc-volar-tools',
-      '@nomicfoundation/coc-solidity', 'coc-tsserver', 'coc-prisma'
+      '@nomicfoundation/coc-solidity', 'coc-tsserver', 'coc-prisma', 'coc-highlight'
     })
   -- use tab to complete
   local opts = { silent = true, noremap = true, expr = true, replace_keycodes = false }
